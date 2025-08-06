@@ -2,13 +2,13 @@ import { useEffect, useState } from 'react';
 import axios from 'axios';
 import { useLoading } from './useLoading.ts';
 import { useError } from './useError.ts';
+import { URL } from '../constants.ts';
+import type { CoffeeItem } from '../types/data.ts';
 
 export function useData() {
-  const [data, setData] = useState([]);
+  const [data, setData] = useState<CoffeeItem[] | null>([]);
   const { setLoading } = useLoading();
   const { setError } = useError();
-
-  const URL = import.meta.env.VITE_DATA_URL;
 
   useEffect(() => {
     getData();
