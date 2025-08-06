@@ -1,3 +1,9 @@
+import { ProductList } from '../../components/ProductList/ProductList.tsx';
+
 export function AvailableProducts() {
-  return <></>;
+  return (
+    <>
+      <ProductList productType="available" />
+    </>
+  );
 }

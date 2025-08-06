@@ -1,11 +1,27 @@
 import { useData } from '../../hooks/useData.ts';
+import { useCoffeeFavourites } from '../../hooks/useCoffeeFavourites.ts';
 
-export function ProductList() {
+interface Props {
+  productType: 'all' | 'available';
+}
+
+export function ProductList({ productType }: Props) {
   const { data } = useData();
+  const { handleAddToFavourites } = useCoffeeFavourites();
+
+  const filteredData = productType === 'available' ? data?.filter((item) => item.available) : data;
+
   return (
     <>
-      {data?.map((item, index) => {
-        return <div key={index}>{item.name}</div>;
+      {filteredData?.map((item, index) => {
+        return (
+          <div
+            key={index}
+            onClick={() => handleAddToFavourites(item)}
+          >
+            {item.name}
+          </div>
+        );
       })}
     </>
   );

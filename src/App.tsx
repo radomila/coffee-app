@@ -1,10 +1,13 @@
 import { BrowserRouter } from 'react-router-dom';
 import { AppRoutes } from './AppRoutes.tsx';
+import { CoffeeFavouritesProvider } from './contexts/CoffeeFavouritesContext.tsx';
 
 function App() {
   return (
     <BrowserRouter>
-      <AppRoutes />
+      <CoffeeFavouritesProvider>
+        <AppRoutes />
+      </CoffeeFavouritesProvider>
     </BrowserRouter>
   );
 }
