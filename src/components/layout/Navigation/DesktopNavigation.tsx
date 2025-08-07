@@ -1,0 +1,27 @@
+import { Button } from '../../ui/Button/Button.tsx';
+import { Menu, X } from 'lucide-react';
+import type { NavigationProps } from '../../../types/coffee.ts';
+import { Logo } from '../Logo/Logo.tsx';
+import { NavigationList } from './NavigationList.tsx';
+
+interface Props extends NavigationProps {
+  toggleMenu: () => void;
+}
+
+export function DesktopNavigation({ toggleMenu, isOpen }: Props) {
+  return (
+    <div className="flex justify-between items-center max-w-7xl mx-auto">
+      <Logo />
+      <NavigationList
+        styles="hidden md:flex space-x-6"
+        navItemStyles="px-3 py-2 font-semibold text-lg hover:text-yellow-600 hover:underline hover:decoration-2 hover:underline-offset-6"
+      />
+      <Button
+        onClick={toggleMenu}
+        styles="md:hidden text-gray-800"
+      >
+        {isOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
+      </Button>
+    </div>
+  );
+}

@@ -1,10 +1,18 @@
+export interface NavigationProps {
+  isOpen: boolean;
+}
+
+export interface NavLinkItem {
+  label: string;
+  path: string;
+}
+
+export type CoffeeType = 'hot' | 'iced';
+
 export interface CoffeeItem {
-  available: boolean;
+  description: string;
   id: number;
   image: string;
-  name: string;
-  popular: boolean;
-  price: string;
-  rating: number;
-  votes: number;
+  ingredients: string[];
+  title: string;
 }

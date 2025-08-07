@@ -1,7 +1,8 @@
 import { Route, Routes } from 'react-router-dom';
 import { Layout } from './components/layout/Layout/Layout.tsx';
-import { Home } from './pages/Home/Home.tsx';
-import { AvailableProducts } from './pages/AvailableProducts/AvailableProducts.tsx';
+import { HomePage } from './pages/Home/HomePage.tsx';
+import { IcedDrinksPage } from './pages/IcedDrinks/IcedDrinksPage.tsx';
+import { HotDrinksPage } from './pages/HotDrinks/HotDrinksPage.tsx';
 
 export function AppRoutes() {
   return (
@@ -12,11 +13,15 @@ export function AppRoutes() {
       >
         <Route
           index
-          element={<Home />}
+          element={<HomePage />}
         />
         <Route
-          path="available-products"
-          element={<AvailableProducts />}
+          path="hot"
+          element={<HotDrinksPage />}
+        />
+        <Route
+          path="iced"
+          element={<IcedDrinksPage />}
         />
       </Route>
     </Routes>
