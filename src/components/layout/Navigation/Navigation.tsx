@@ -9,7 +9,7 @@ export function Navigation() {
   const closeMenu = () => setIsOpen(false);
 
   return (
-    <nav className="bg-transparent px-4 py-6 shadow-lg relative z-50">
+    <nav className="bg-transparent px-4 py-3 shadow-lg relative z-50">
       <DesktopNavigation
         toggleMenu={toggleMenu}
         isOpen={isOpen}

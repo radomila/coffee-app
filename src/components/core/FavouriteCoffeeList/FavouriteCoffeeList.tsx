@@ -1,4 +1,5 @@
 import { useFavouriteCoffee } from '../../../hooks/useFavouriteCoffee.ts';
+import { FavouriteCoffeeItem } from '../FavouriteCoffeeItem/FavouriteCoffeeItem.tsx';
 
 export function FavouriteCoffeeList() {
   const { favouriteCoffeeItems } = useFavouriteCoffee();
@@ -6,7 +7,12 @@ export function FavouriteCoffeeList() {
   return (
     <>
       {favouriteCoffeeItems?.map((coffeeItem) => {
-        return <div key={coffeeItem.id}>{coffeeItem.title}</div>;
+        return (
+          <FavouriteCoffeeItem
+            key={coffeeItem.id}
+            coffeeItem={coffeeItem}
+          />
+        );
       })}
     </>
   );

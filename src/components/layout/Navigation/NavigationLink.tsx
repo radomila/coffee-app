@@ -9,7 +9,7 @@ interface Props {
 
 export function NavigationLink({ item, onClick, styles }: Props) {
   return (
-    <li key={item.label}>
+    <li>
       <Link
         to={item.path}
         onClick={onClick}

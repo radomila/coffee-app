@@ -1,9 +1,16 @@
+import { type ReactElement } from 'react';
+
+export interface CoffeeItemProps {
+  key: number;
+  coffeeItem: CoffeeItem;
+}
+
 export interface NavigationProps {
   isOpen: boolean;
 }
 
 export interface NavLinkItem {
-  label: string;
+  label: string | ReactElement;
   path: string;
 }
 

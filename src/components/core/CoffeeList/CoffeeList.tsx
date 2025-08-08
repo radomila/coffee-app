@@ -10,7 +10,7 @@ export function CoffeeList({ type }: ProductListProps) {
   const { coffeeData } = useCoffeeData(type);
 
   return (
-    <>
+    <div className="flex flex-wrap justify-center items-center gap-10 pt-10 mx-10">
       {coffeeData?.map((coffeeItem) => {
         return (
           <CoffeeItem
@@ -19,6 +19,6 @@ export function CoffeeList({ type }: ProductListProps) {
           />
         );
       })}
-    </>
+    </div>
   );
 }
