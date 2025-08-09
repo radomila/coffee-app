@@ -10,13 +10,13 @@ export function FavouriteCoffeeItem({ coffeeItem }: CoffeeItemProps) {
   return (
     <div
       key={id}
-      className="flex items-center justify-between gap-20 max-w-2xl text-justify pt-10"
+      className="flex flex-col md:flex-row items-center justify-between gap-5 md:gap-20 max-w-2xl text-justify pt-10"
     >
-      <div className="flex items-center gap-5">
+      <div className="flex flex-col md:flex-row items-center gap-5 max-w-70 md:max-w-xl">
         <img
           src={image}
           alt={title}
-          className="min-w-24 max-w-24 h-24 object-cover rounded-full"
+          className="rounded-md object-cover min-w-70 max-w-70 h-70 md:min-w-24 md:max-w-24 md:h-24 md:rounded-full"
         />
         <div>
           <div className="text-lg font-semibold">{title}</div>

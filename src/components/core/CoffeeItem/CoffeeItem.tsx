@@ -10,11 +10,11 @@ export function CoffeeItem({ coffeeItem }: CoffeeItemProps) {
   const isFavourite = favouriteCoffeeItems?.some((favItem) => favItem.id === coffeeItem.id);
 
   return (
-    <div className="relative w-70 h-70">
+    <div className="relative">
       <img
         src={image}
         alt={title}
-        className="w-full h-full object-cover rounded-md"
+        className="w-70 h-70 object-cover rounded-md"
       />
       {isFavourite ? (
         <Button
