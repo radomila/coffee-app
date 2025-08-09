@@ -17,7 +17,7 @@ export function MobileNavigation({ closeMenu, isOpen }: Props) {
       </div>
       <NavigationList
         styles="flex flex-col items-center justify-center h-full space-y-6 text-xl font-medium"
-        navItemStyles="hover:bg-gray-200 px-3 py-2 rounded-md"
+        navItemStyles="px-3 py-2"
       />
     </div>
   );

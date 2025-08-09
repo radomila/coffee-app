@@ -18,7 +18,6 @@ export function useCoffeeData(type: CoffeeType) {
     setLoading(true);
     try {
       const response = await axios.get(`${URL}/${type}`);
-      console.log(response.data);
       setCoffeeData(response.data);
     } catch (error) {
       if (error instanceof Error) {

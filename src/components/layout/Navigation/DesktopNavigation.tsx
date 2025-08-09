@@ -10,7 +10,7 @@ interface Props extends NavigationProps {
 
 export function DesktopNavigation({ toggleMenu, isOpen }: Props) {
   return (
-    <div className="flex items-center gap-3 md:justify-between md:mx-16 md:gap-0">
+    <div className="mx-4 my-2 flex items-center gap-3 md:justify-between md:mx-16 md:gap-0">
       <Button
         onClick={toggleMenu}
         styles="md:hidden text-gray-800"
