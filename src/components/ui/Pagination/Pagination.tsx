@@ -1,35 +1,53 @@
 import { Button } from '../Button/Button.tsx';
-import { ChevronLeft, ChevronRight } from 'lucide-react';
+import { ChevronLeft, ChevronRight, ChevronsLeft, ChevronsRight } from 'lucide-react';
 import { useCurrentPage } from '../../../hooks/useCurrentPage.ts';
+import clsx from 'clsx';
 
 interface Props {
-  numberOfItems: number | undefined;
-  itemsPerPage: number;
+  numberOfPages: number;
 }
 
-export function Pagination({ numberOfItems, itemsPerPage }: Props) {
+export function Pagination({ numberOfPages }: Props) {
   const { currentPage, setCurrentPage } = useCurrentPage();
 
-  const numberOfPages = Math.ceil(numberOfItems / itemsPerPage);
-  const pages = Array.from({ length: numberOfPages }, (_, i) => i + 1);
+  const pagesNumbers = Array.from({ length: numberOfPages }, (_, i) => i + 1);
 
   return (
-    <div className="flex items-center gap-8 pt-10">
-      <Button onClick={() => setCurrentPage(currentPage - 1)}>
+    <div className="absolute bottom-10 flex items-center gap-8 pt-10 ">
+      <Button
+        onClick={() => setCurrentPage(1)}
+        isDisabled={currentPage === 1}
+      >
+        <ChevronsLeft />
+      </Button>
+      <Button
+        onClick={() => setCurrentPage(currentPage - 1)}
+        isDisabled={currentPage === 1}
+      >
         <ChevronLeft />
       </Button>
-      {pages.map((page) => {
+      {pagesNumbers.map((page) => {
         return (
           <Button
             key={page}
             onClick={() => setCurrentPage(page)}
+            styles={clsx(page === currentPage && 'bg-text-secondary px-5 py-3 text-text-dark rounded-md')}
           >
             {page}
           </Button>
         );
       })}
-      <Button onClick={() => setCurrentPage(currentPage + 1)}>
+      <Button
+        onClick={() => setCurrentPage(currentPage + 1)}
+        isDisabled={currentPage === numberOfPages}
+      >
         <ChevronRight />
+      </Button>
+      <Button
+        onClick={() => setCurrentPage(numberOfPages)}
+        isDisabled={currentPage === numberOfPages}
+      >
+        <ChevronsRight />
       </Button>
     </div>
   );

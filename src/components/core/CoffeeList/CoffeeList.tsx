@@ -1,17 +1,21 @@
-import { useCoffeeData } from '../../../hooks/useCoffeeData.ts';
-import type { CoffeeType } from '../../../types/coffee.ts';
 import { CoffeeItem } from '../CoffeeItem/CoffeeItem.tsx';
 
-interface ProductListProps {
-  type: CoffeeType;
+// TODO: CofeeItem type naming - colides with component name
+
+interface Props {
+  paginatedCoffeeItems: {
+    description: string;
+    id: number;
+    image: string;
+    ingredients: string[];
+    title: string;
+  }[];
 }
 
-export function CoffeeList({ type }: ProductListProps) {
-  const { coffeeData } = useCoffeeData(type);
-
+export function CoffeeList({ paginatedCoffeeItems }: Props) {
   return (
     <div className="flex flex-wrap justify-center items-center gap-10 pt-10 mx-10">
-      {coffeeData?.map((coffeeItem) => {
+      {paginatedCoffeeItems?.map((coffeeItem) => {
         return (
           <CoffeeItem
             key={coffeeItem.id}

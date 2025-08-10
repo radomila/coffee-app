@@ -1,0 +1,17 @@
+@import "tailwindcss";
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Cookie&family=Dancing+Script:wght@400..700&display=swap');
+
+@theme {
+    /* Color Variables */
+    --color-background-light: #ffffff;
+    --color-background-dark: #000000;
+    --color-text-light: var(--color-background-dark);
+    --color-text-dark: var(--color-background-light);
+    --color-text-secondary: #f4822b;
+    --color-heart-icon: #d00606;
+    --color-line: #c1c0c0;
+
+    /* Font Variables */
+    --font-main: 'DM Sans', sans-serif;
+}

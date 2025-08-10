@@ -1,23 +1,14 @@
-import { useFavouriteCoffee } from '../../../hooks/useFavouriteCoffee.ts';
 import { FavouriteCoffeeItem } from '../FavouriteCoffeeItem/FavouriteCoffeeItem.tsx';
-import { useCurrentPage } from '../../../hooks/useCurrentPage.ts';
+import type { CoffeeItem } from '../../../types/coffee.ts';
 
 interface Props {
-  itemsPerPage: number;
+  paginatedCoffeeItems: CoffeeItem[];
 }
 
-export function FavouriteCoffeeList({ itemsPerPage }: Props) {
-  const { favouriteCoffeeItems } = useFavouriteCoffee();
-  const { currentPage } = useCurrentPage();
-
-  const endIndex = currentPage * itemsPerPage;
-  const startIndex = endIndex - itemsPerPage;
-
-  const items = favouriteCoffeeItems?.slice(startIndex, endIndex);
-
+export function FavouriteCoffeeList({ paginatedCoffeeItems }: Props) {
   return (
     <>
-      {items?.map((coffeeItem) => {
+      {paginatedCoffeeItems?.map((coffeeItem) => {
         return (
           <FavouriteCoffeeItem
             key={coffeeItem.id}

@@ -20,7 +20,7 @@ export function DesktopNavigation({ toggleMenu, isOpen }: Props) {
       <Logo />
       <NavigationList
         styles="hidden md:flex md:items-center md:justify-center md:gap-6"
-        navItemStyles="px-3 py-2 font-medium text-lg hover:text-yellow-600 hover:underline hover:decoration-2 hover:underline-offset-6"
+        navItemStyles="px-3 py-2 font-medium text-lg hover:text-text-secondary hover:underline hover:decoration-2 hover:underline-offset-8"
       />
     </div>
   );

@@ -1,8 +1,8 @@
 @import "tailwindcss";
-@import url('https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&display=swap');
+@import "./theme.css";
 
 :root {
-  font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
+  font-family: var(--font-main);
   line-height: 1.5;
   font-weight: 400;
 
@@ -18,12 +18,12 @@
 
 body {
   margin: 0;
-  font-family: "DM Sans", sans-serif;
+
 }
 
 @media (prefers-color-scheme: light) {
   :root {
-    color: black;
-    background-color: #ffffff;
+    color: var(--color-text-light);
+    background-color: var(--color-background-light);
   }
 }

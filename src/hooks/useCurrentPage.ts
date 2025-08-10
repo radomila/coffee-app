@@ -1,10 +1,12 @@
-import { useState } from 'react';
+import { CurrentPageContext } from '../contexts/CurrentPageContext.tsx';
+import { useContext } from 'react';
 
 export function useCurrentPage() {
-  const [currentPage, setCurrentPage] = useState<number>(1);
+  const context = useContext(CurrentPageContext);
 
-  return {
-    currentPage,
-    setCurrentPage,
-  };
+  if (!context) {
+    throw new Error('useCurrentPage must be used within a CoffeeFavouritesProvider');
+  }
+
+  return context;
 }
