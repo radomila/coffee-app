@@ -5,13 +5,16 @@ interface Props {
 }
 
 export function FavouriteCoffeeDescription({ title, description, ingredients }: Props) {
+  const formattedIngredientItems = Array.isArray(ingredients) ? ingredients : [ingredients];
+
   return (
     <div>
       <div className="text-lg font-semibold">{title}</div>
       <div className="text-sm">{description}</div>
       <div className="text-sm pt-2">
         <span className="font-semibold pr-2">Ingredients:</span>
-        <span className="text-text-secondary">{ingredients}</span>
+
+        <span className="text-text-secondary">{formattedIngredientItems.join(', ')}</span>
       </div>
     </div>
   );

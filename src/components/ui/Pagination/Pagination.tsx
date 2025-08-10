@@ -10,10 +10,10 @@ interface Props {
 export function Pagination({ numberOfPages }: Props) {
   const { currentPage, setCurrentPage } = useCurrentPage();
 
-  const pagesNumbers = Array.from({ length: numberOfPages }, (_, i) => i + 1);
+  const pagesNumbers = numberOfPages > 0 ? Array.from({ length: numberOfPages }, (_, i) => i + 1) : [];
 
   return (
-    <div className="absolute bottom-10 flex items-center gap-8 pt-10 ">
+    <div className="static md:absolute md:bottom-10 flex items-center gap-8 pt-10">
       <Button
         onClick={() => setCurrentPage(1)}
         isDisabled={currentPage === 1}

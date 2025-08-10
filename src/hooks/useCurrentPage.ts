@@ -1,12 +1,23 @@
-import { CurrentPageContext } from '../contexts/CurrentPageContext.tsx';
-import { useContext } from 'react';
+import { useSearchParams } from 'react-router-dom';
+import { useEffect } from 'react';
 
 export function useCurrentPage() {
-  const context = useContext(CurrentPageContext);
+  const [searchParams, setSearchParams] = useSearchParams();
 
-  if (!context) {
-    throw new Error('useCurrentPage must be used within a CoffeeFavouritesProvider');
-  }
+  const firstPage = 1;
+  const currentPage = Number(searchParams.get('page')) || firstPage;
 
-  return context;
+  const setCurrentPage = (page: number) => {
+    const newParams = new URLSearchParams(searchParams);
+    newParams.set('page', page.toString());
+    setSearchParams(newParams);
+  };
+
+  useEffect(() => {
+    if (!searchParams.get('page')) {
+      setCurrentPage(firstPage);
+    }
+  }, [searchParams]);
+
+  return { currentPage, setCurrentPage };
 }

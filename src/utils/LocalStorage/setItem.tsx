@@ -1,4 +1,4 @@
-export function setCoffeeItem(key: string, value: unknown) {
+export function setItem(key: string, value: unknown) {
   try {
     window.localStorage.setItem(key, JSON.stringify(value));
   } catch (error) {

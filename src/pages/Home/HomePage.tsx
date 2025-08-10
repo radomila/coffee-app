@@ -1,4 +1,4 @@
 export function HomePage() {
   // TODO: Implement the HomePage component
-  return <></>;
+  return <div>homepage is not ready yet</div>;
 }

@@ -18,7 +18,7 @@ export function FavouriteCoffeeItem({ coffeeItem }: CoffeeItemProps) {
         <CoffeeItemImage
           image={image}
           title={title}
-          styles="md:min-w-24 md:max-w-24 md:h-24 md:rounded-full"
+          className="md:min-w-24 md:max-w-24 md:h-24 md:rounded-full"
         />
         <FavouriteCoffeeDescription
           title={title}

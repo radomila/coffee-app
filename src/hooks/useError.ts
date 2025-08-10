@@ -1,10 +1,10 @@
 import { useState } from 'react';
 
 export function useError() {
-  const [error, setError] = useState<string>('');
+  const [error, setError] = useState<string | null>(null);
 
   return {
-    isError: error,
+    error,
     setError,
   };
 }

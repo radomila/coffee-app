@@ -1,15 +1,8 @@
 import { CoffeeItem } from '../CoffeeItem/CoffeeItem.tsx';
-
-// TODO: CofeeItem type naming - colides with component name
+import type { CoffeeItem as CoffeeItemType } from '../../../types/coffee.ts';
 
 interface Props {
-  paginatedCoffeeItems: {
-    description: string;
-    id: number;
-    image: string;
-    ingredients: string[];
-    title: string;
-  }[];
+  paginatedCoffeeItems: CoffeeItemType[];
 }
 
 export function CoffeeList({ paginatedCoffeeItems }: Props) {

@@ -4,13 +4,16 @@ import { useCoffeeData } from '../../hooks/useCoffeeData.ts';
 import { usePaginatedItems } from '../../hooks/usePaginatedItems.ts';
 import { CoffeeItemsEmptyState } from '../../components/core/CoffeeItemsEmptyState/CoffeeItemsEmptyState.tsx';
 import { Frown } from 'lucide-react';
+import { PageWrapper } from '../../components/layout/PageWrapper/PageWrapper.tsx';
+import { ErrorAlert } from '../../components/ui/ErrorAlert/ErrorAlert.tsx';
 
 export function HotDrinksPage() {
-  const { coffeeData } = useCoffeeData('hot');
+  const { coffeeData, error } = useCoffeeData('hot');
   const { paginatedCoffeeItems, numberOfPages } = usePaginatedItems({ allItems: coffeeData, itemsPerPage: 10 });
 
   return (
-    <div className="flex flex-col items-center justify-between pt-10 px-4 text-center">
+    <PageWrapper>
+      {error && <ErrorAlert error={error} />}
       {coffeeData && coffeeData.length > 0 ? (
         <>
           <CoffeeList paginatedCoffeeItems={paginatedCoffeeItems} />
@@ -23,6 +26,6 @@ export function HotDrinksPage() {
           description="Please, try again later or check out your internet connection"
         />
       )}
-    </div>
+    </PageWrapper>
   );
 }
