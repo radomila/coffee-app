@@ -1,3 +1,10 @@
+import { Coffee } from 'lucide-react';
+
 export function Logo() {
-  return <div className="text-xl font-semibold tracking-widest">Coffee Library</div>;
+  return (
+    <div className="flex items-center gap-2 text-lg">
+      <Coffee className="text-orange" />
+      <div>Coffee Library</div>
+    </div>
+  );
 }

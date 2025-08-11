@@ -7,7 +7,7 @@ interface Props {
 
 export function CoffeeList({ paginatedCoffeeItems }: Props) {
   return (
-    <div className="flex flex-wrap justify-center items-center gap-10 pt-10 mx-10">
+    <div className="flex flex-wrap justify-center items-center gap-10 pt-10">
       {paginatedCoffeeItems?.map((coffeeItem) => {
         return (
           <CoffeeItem

@@ -17,8 +17,8 @@ export function MobileNavigation({ closeMenu, isOpen }: Props) {
         </Button>
       </div>
       <NavigationList
-        styles="flex flex-col items-center justify-center h-full space-y-6 text-xl font-medium"
-        navItemStyles="px-3 py-2"
+        styles="flex flex-col items-center justify-center h-full space-y-6 text-base font-medium"
+        navItemStyles="flex gap-2 px-1 py-1"
       />
     </div>
   );

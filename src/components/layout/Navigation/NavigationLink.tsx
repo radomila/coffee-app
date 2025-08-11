@@ -11,10 +11,12 @@ export function NavigationLink({ item, onClick, styles }: Props) {
   return (
     <li>
       <Link
-        to={item.path}
         onClick={onClick}
         className={styles}
+        to={item.path}
       >
+        {' '}
+        {item.icon}
         {item.label}
       </Link>
     </li>

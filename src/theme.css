@@ -4,7 +4,9 @@
     /* Color Variables */
     --color-white: #ffffff;
     --color-black: #000000;
-    --color-orange: #f4822b;
+    --color-orange: #f37c1c;
+    --color-orange-light: #f8ebe2;
     --color-red: #d00606;
-    --color-gray: #c1c0c0;
+    --color-gray: #bdbdbd;
+    --color-gray-light: #f3f2f2;
 }

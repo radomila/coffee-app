@@ -5,5 +5,5 @@ interface Props {
 }
 
 export function Heading({ children }: Props) {
-  return <div className="text-4xl font-semibold">{children}</div>;
+  return <div className="text-3xl">{children}</div>;
 }

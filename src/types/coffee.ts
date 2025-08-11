@@ -10,6 +10,7 @@ export interface NavigationProps {
 }
 
 export interface NavLinkItem {
+  icon: ReactElement;
   label: string | ReactElement;
   path: string;
 }

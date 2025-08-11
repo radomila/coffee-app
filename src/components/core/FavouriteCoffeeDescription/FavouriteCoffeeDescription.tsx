@@ -13,7 +13,6 @@ export function FavouriteCoffeeDescription({ title, description, ingredients }: 
       <div className="text-sm">{description}</div>
       <div className="text-sm pt-2">
         <span className="font-semibold pr-2">Ingredients:</span>
-
         <span className="text-orange">{formattedIngredientItems.join(', ')}</span>
       </div>
     </div>
