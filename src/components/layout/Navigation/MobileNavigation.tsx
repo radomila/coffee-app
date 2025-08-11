@@ -10,10 +10,10 @@ interface Props extends NavigationProps {
 
 export function MobileNavigation({ closeMenu, isOpen }: Props) {
   return (
-    <div className={clsx('fixed top-0 left-0 w-full h-full bg-background-light transition-transform duration-300 ease-in-out z-40', isOpen ? 'translate-x-0' : '-translate-x-full')}>
+    <div className={clsx('fixed top-0 left-0 w-full h-full bg-white transition-transform duration-300 ease-in-out z-0', isOpen ? 'translate-x-0' : '-translate-x-full')}>
       <div className="flex justify-end p-4">
         <Button onClick={closeMenu}>
-          <X className="w-6 h-6 text-gray-800" />
+          <X className="w-6 h-6 text-black" />
         </Button>
       </div>
       <NavigationList

@@ -13,7 +13,7 @@ export function Pagination({ numberOfPages }: Props) {
   const pagesNumbers = numberOfPages > 0 ? Array.from({ length: numberOfPages }, (_, i) => i + 1) : [];
 
   return (
-    <div className="static md:absolute md:bottom-10 flex items-center gap-8 pt-10">
+    <div className="flex items-center gap-8 pt-10">
       <Button
         onClick={() => setCurrentPage(1)}
         isDisabled={currentPage === 1}
@@ -31,7 +31,7 @@ export function Pagination({ numberOfPages }: Props) {
           <Button
             key={page}
             onClick={() => setCurrentPage(page)}
-            styles={clsx(page === currentPage && 'bg-text-secondary px-5 py-3 text-text-dark rounded-md')}
+            styles={clsx(page === currentPage && 'bg-orange px-5 py-3 text-white rounded-md')}
           >
             {page}
           </Button>

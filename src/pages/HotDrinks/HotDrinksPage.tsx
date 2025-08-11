@@ -11,9 +11,16 @@ export function HotDrinksPage() {
   const { coffeeData, error } = useCoffeeData('hot');
   const { paginatedCoffeeItems, numberOfPages } = usePaginatedItems({ allItems: coffeeData, itemsPerPage: 10 });
 
+  if (error) {
+    return (
+      <PageWrapper>
+        <ErrorAlert error={error} />
+      </PageWrapper>
+    );
+  }
+
   return (
     <PageWrapper>
-      {error && <ErrorAlert error={error} />}
       {coffeeData && coffeeData.length > 0 ? (
         <>
           <CoffeeList paginatedCoffeeItems={paginatedCoffeeItems} />

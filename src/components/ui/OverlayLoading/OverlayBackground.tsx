@@ -5,5 +5,5 @@ interface Props {
 }
 
 export function OverlayBackground({ children }: Props) {
-  return <div className="fixed inset-0 bg-white/50 backdrop-blur-md z-60 flex justify-center items-center">{children}</div>;
+  return <div className="fixed inset-0 bg-white/50 backdrop-blur-md z-2 flex justify-center items-center">{children}</div>;
 }

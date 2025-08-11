@@ -11,6 +11,14 @@ export function IcedDrinksPage() {
   const { coffeeData, error } = useCoffeeData('iced');
   const { paginatedCoffeeItems, numberOfPages } = usePaginatedItems({ allItems: coffeeData, itemsPerPage: 10 });
 
+  if (error) {
+    return (
+      <PageWrapper>
+        <ErrorAlert error={error} />
+      </PageWrapper>
+    );
+  }
+
   return (
     <PageWrapper>
       {error && <ErrorAlert error={error} />}

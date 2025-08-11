@@ -16,7 +16,7 @@ export function FavouriteCoffeePage() {
       <div className="w-full max-w-2xl text-left">
         <Heading>Favourites</Heading>
         <div className="flex gap-2 text-md py-4">You have {favouriteCoffeeItems?.length} favourite drinks in your inventory</div>
-        <hr className="h-px text-line"></hr>
+        <hr className="h-px text-gray"></hr>
         <FavouriteCoffeeList paginatedCoffeeItems={paginatedCoffeeItems} />
       </div>
       {numberOfPages > 1 && <Pagination numberOfPages={numberOfPages} />}

@@ -27,7 +27,7 @@ export function FavouriteCoffeeItem({ coffeeItem }: CoffeeItemProps) {
         />
       </div>
       <Button onClick={() => handleRemoveFromFavourites(coffeeItem)}>
-        <HeartMinus className="text-heart-icon" />
+        <HeartMinus className="text-red" />
       </Button>
     </div>
   );

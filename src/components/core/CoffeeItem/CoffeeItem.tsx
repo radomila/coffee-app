@@ -24,14 +24,14 @@ export function CoffeeItem({ coffeeItem }: CoffeeItemProps) {
           onClick={() => handleRemoveFromFavourites(coffeeItem)}
           styles="absolute top-3 right-3 transition-transform duration-500 hover:scale-120"
         >
-          <HeartMinus className="text-heart-icon" />
+          <HeartMinus className="text-red" />
         </Button>
       ) : (
         <Button
           onClick={() => handleAddToFavourites(coffeeItem)}
           styles="absolute top-3 right-3 transition-transform duration-500 hover:scale-120"
         >
-          <HeartPlus className="text-heart-icon" />
+          <HeartPlus className="text-red" />
         </Button>
       )}
     </div>
